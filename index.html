@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Resume</title>
+    <!-- Assuming the icon-128.png is in the same directory, or we can use it as a favicon -->
+    <link rel="icon" type="image/png" href="icon-128.png">
+    
+    <!-- Using Google Fonts matching the system UI stack intention -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Minimalist color palette */
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent-red: #ff0000;
+            --border-color: #e5e5e5;
+            
+            /* Typography matching YouTube / UX spec */
+            --font-stack: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Container for central layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            flex-grow: 1; /* Pushes footer down */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Header / Hero Section */
+        header {
+            margin-bottom: 4rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-container img {
+            width: 48px; /* Slightly smaller than 128px max size for visual balance */
+            height: 48px;
+            border-radius: 8px; /* Optional slight rounding depending on icon design */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Value Proposition Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 4rem;
+            width: 100%;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: #fafafa;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Call to Action */
+        .cta-section {
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #333333;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--text-main);
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="logo-container">
+                <img src="icon-128.png" alt="YouTube Resume Logo">
+                <h1>YouTube Resume</h1>
+            </div>
+            <p class="subtitle">Automatically resume YouTube videos exactly where you left off. Invisible until needed, reliable always.</p>
+        </header>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Invisible by Design</h3>
+                <p>No configuration, no accounts, and no visible interface during normal playback. It just works quietly in the background.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Crash Recovery</h3>
+                <p>Browser crash, accidental tab close, or restarting tomorrow? Your progress is saved exactly where it was.</p>
+            </div>
+            <div class="feature-card">
+                <h3>100% Local Privacy</h3>
+                <p>Zero network calls. No analytics. All progress data is stored directly on your machine.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <a href="https://github.com/EmeraldZhu/youtube-resume" class="btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/EmeraldZhu/youtube-resume" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="/privacy/">Privacy Policy</a>
+        </div>
+        <p>&copy; 2026 YouTube Resume. Open source extension.</p>
+    </footer>
+
+</body>
+</html>
